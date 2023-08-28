@@ -4,6 +4,7 @@ Deploy Website on Docker with code analysis tool SonarQube using  ec2 instance &
 <br></br>
 
 # Project Blog link :-
+https://medium.com/@rutikdevops/devops-project-4-31891d829c00
 <br></br>
 
 # Project Overview :-
