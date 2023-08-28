@@ -154,6 +154,16 @@ docker run -d --name registerapp -p 8081:8080 regapp:v1
 <img width="680" alt="image" src="https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/9f0b104a-5739-4179-8488-791791a65ad7">
 ![image](https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/3c97a996-3b88-4bcb-a595-0c01dc464aef)
 - Apply -> Save
+
+# Output :-
+
+<img width="946" alt="image" src="https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/5b40ea11-bae4-49c7-8301-f79f953813f6">
+<img width="949" alt="image" src="https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/5abf45d1-3905-4ca9-a549-307dd96720ce">
+![image](https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/564186d7-04e5-4d52-b3a4-bdca50a60652)
+![image](https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/ab632b14-c641-4cb5-b759-c388efb34a8d)
+
+
+
 - In this section, we have successfully deployed the application to the Docker server and enabled CI/CD. If any changes occur in the source code, they will be automatically built and deployed to the server.
 
 
