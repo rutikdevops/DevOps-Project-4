@@ -159,8 +159,7 @@ docker run -d --name registerapp -p 8081:8080 regapp:v1
 
 <img width="946" alt="image" src="https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/5b40ea11-bae4-49c7-8301-f79f953813f6">
 <img width="949" alt="image" src="https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/5abf45d1-3905-4ca9-a549-307dd96720ce">
-![image](https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/564186d7-04e5-4d52-b3a4-bdca50a60652)
-![image](https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/ab632b14-c641-4cb5-b759-c388efb34a8d)
+<img width="719" alt="image" src="https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/7ac056bf-3a91-4c38-b2db-51532e09ee50">
 
 
 
