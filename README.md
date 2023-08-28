@@ -131,9 +131,9 @@ mkdir docker
 cd docker
 chown -R dockeradmin:dockeradmin /opt/docker
 vim Dockerfile
-   From tomcat:8-jre8 
-   MAINTAINER "valaxytech@gmail.com" 
-   COPY ./webapp.war /usr/local/tomcat/webapps
+FROM tomcat:latest
+RUN cp -R /usr/local/tomcat/webapps.dist/* /usr/local/tomcat/webapps
+COPY ./*.war /usr/local/tomcat/webapps
  
 chmod 777 /var/run/docker.sock
 ```
