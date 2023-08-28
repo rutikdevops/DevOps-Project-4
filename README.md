@@ -140,8 +140,21 @@ chmod 777 /var/run/docker.sock
 
 
 - Now Create a Jenkins job to pull the code from Github , build with help of Maven and copy the Artifacts to Dockerhost.
+- Jenkins -> Dashboard ->New project-> DevOps-Project-4-> maven project-> Source Code Management->  Post-build Actions -> select Send build artifacts over SSH -> SSH Server -> Name : give name of Added SSH Server -> Source file: webapp/target/*.war -> Remove prefix : webapp/target -> Remote directory : //opt//docker -> Exec command : enter the below commands
+```bash
+cd /opt/docker;
+docker build -t regapp:v1 .;
+docker stop registerapp;
+docker rm registerapp;
+docker run -d --name registerapp -p 8081:8080 regapp:v1
+```
 
-
+![image](https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/c8641958-0a3c-428b-8df1-67046160f153)
+<img width="667" alt="image" src="https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/5c8e3f4b-8120-402c-8b01-0b33ca5271fc">
+<img width="680" alt="image" src="https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/9f0b104a-5739-4179-8488-791791a65ad7">
+![image](https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/3c97a996-3b88-4bcb-a595-0c01dc464aef)
+- Apply -> Save
+- In this section, we have successfully deployed the application to the Docker server and enabled CI/CD. If any changes occur in the source code, they will be automatically built and deployed to the server.
 
 
 
