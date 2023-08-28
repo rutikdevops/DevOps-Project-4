@@ -177,6 +177,9 @@ docker run -d --name registerapp -p 8081:8080 regapp:v1
 - Apply -> Save
 
 # Output :-
+- Lets access the tomcat server using public ip through port 8081
+<img width="941" alt="image" src="https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/913b6d44-f3c5-4d67-9134-8fbcfd01f32a">
+<br></br>
 
 <img width="946" alt="image" src="https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/5b40ea11-bae4-49c7-8301-f79f953813f6">
 <br></br>
