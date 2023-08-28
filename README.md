@@ -50,7 +50,10 @@ cat /var/lib/jenkins/secrets/initialAdminPassword
 ![image](https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/02f20d88-f4b8-4a1c-9d29-7c1162a6b826)
 
 - Connect github to jenkins through webhook
+<img width="960" alt="image" src="https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/2f366ed5-fae2-4056-8836-3c3e989f3008">
 
+- Build Now in Jenkins
+![image](https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/9a4812b9-7f49-4503-b820-031ff998895c)
 
 
 
