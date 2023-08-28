@@ -9,7 +9,7 @@ Deploy Website on Docker with code analysis tool SonarQube using  ec2 instance &
 2. Docker-Server     : AWS Linux-2, t2 micro
 3. SonarQube-Server  : AWS Linux-2, t2 medium
 <img width="960" alt="image" src="https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/71f18501-3a09-45aa-a8a8-7e5c3d3bab2c">
-# Install and Configure the Jenkins :-
+# 1. Install and Configure the Jenkins :-
 ```bash
 ec2-user
 sudo su
@@ -54,6 +54,89 @@ cat /var/lib/jenkins/secrets/initialAdminPassword
 
 - Build Now in Jenkins
 ![image](https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/9a4812b9-7f49-4503-b820-031ff998895c)
+
+
+
+# 3. Run sonarqube
+```bash
+ec2-user
+sudo su
+yum update -y
+hostnamectl set-hostname sonarqube
+bash
+```
+- Java installation on Jenkins server:-
+```bash
+yum install java* -y
+java --version
+alternatives --config java              ## Using this command you can choose any version of Java
+                                        // select java 11 version
+```
+
+
+```bash
+cd /opt
+wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.9.10.61524.zip  #(chrome-downloadsonarqube-latestversion-rightclick-copypaste)
+unzip sonarqube-8.9.10.61524.zip
+cd sonarqube-8.9.10.61524
+cd bin
+cd linux-x86-64
+./sonar.sh start
+./sonar.sh status    (in that sonarqube is not running)
+cd ../..
+cd logs
+useradd sonaradmin
+chown -R sonaradmin:sonaradmin /opt/sonarqube-8.9.10.61524
+pwd
+cd ..
+su - sonaradmin
+cd /opt/sonarqube-8.9.10.61524/
+cd bin
+cd linux-x86-64
+./sonar.sh start
+./sonar.sh status
+netstat -tulpn        #(command for check port)
+                      #(paste public ip with :9000)
+                      #(securitygroup-inboundrule-all traffic, anywhere)
+                      #(username passwd bydefault is admin)
+```
+
+
+
+# 4. Connect to terminal and install docker :-
+```bash
+sudo su - 
+yum install docker -y
+systemctl start docker
+systemctl enable docker
+systemctl status docker
+useradd dockeradmin
+passwd dockeradmin
+usermod -aG docker dockeradmin
+vim /etc/ssh/sshd_config
+ ( PasswordAuthentication yes )
+systemctl restart sshd
+```
+
+- Lets Integrate Docker with Jenkins
+- Jenkins -> Manage Jenkins -> Plugins -> Available -> Search for Publish Over SSH -> Install
+- Lets configure Docker in Jenkins
+- Jenkins -> Manage Jenkins -> System -> Publish Over SSH -> SSH Servers -> Add -> Give Name -> Hostname : <Docker host private ip> -> Username : dockeradmin -> advanced -> enable password based authentication -> password : <password of dockeradmin -> test configuration -> Apply -> Save
+
+- Successfully instegrated docker with jenkins.
+- Now goto docker server
+```bash
+cd /opt
+mkdir docker
+cd docker
+chown -R dockeradmin:dockeradmin /opt/docker
+vim Dockerfile
+   FROM tomcat:latest
+   RUN cp -R /usr/local/tomcat/webapps.dist/* /usr/local/tomcat/webapps
+   COPY ./*.war /usr/local/tomcat/webapps
+ 
+chmod 777 /var/run/docker.sock
+```
 
 
 
