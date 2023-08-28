@@ -1,14 +1,23 @@
 # DevOps-Project-4
 Deploy Website on Docker with code analysis tool SonarQube using  ec2 instance & Jenkins
 ![Docker Host (1)](https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/d0b11f69-5f8c-4075-83a7-a7274a8a2fcb)
+<br></br>
+
 # Project Blog link :-
+<br></br>
+
 # Project Overview :-
+- In this project I created a CICD Pipeline. In which push the code in GitHub and from the github I will push the code to Jenkins and After pulling the code from GitHub I will Test the code from SonarQube which is static code analysis tool In which we can solve bugs & vulnarities also we can add the rules regarding scanning. After scanning the code If code pass I deployed code on Docker
+<br></br>
+
 # Project Steps :-
 - Create 3 ec2 instance :
 1. Jenkins-Server    : AWS Linux-2, t2 micro
 2. Docker-Server     : AWS Linux-2, t2 micro
 3. SonarQube-Server  : AWS Linux-2, t2 medium
 <img width="960" alt="image" src="https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/71f18501-3a09-45aa-a8a8-7e5c3d3bab2c">
+<br></br>
+
 # 1. Install and Configure the Jenkins :-
 ```bash
 ec2-user
@@ -36,6 +45,7 @@ systemctl status jenkins.service
 ```
 - Copy public ip of jenkins server and paste it in new tab with port no.8080
 <img width="576" alt="image" src="https://github.com/rutikdevops/DevOps-Project-2/assets/109506158/75d4392c-c663-441e-baa8-39c11af26ead">
+<br></br>
 
 - copy this path and paste in terminal with "cat" command
 ```bash
@@ -48,12 +58,15 @@ cat /var/lib/jenkins/secrets/initialAdminPassword
 # 2. Run the code in jenkins: 
 - Jenkins-> New Item-> Freestyle Project-> Source Code Management-> Git
 ![image](https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/02f20d88-f4b8-4a1c-9d29-7c1162a6b826)
+<br></br>
 
 - Connect github to jenkins through webhook
 <img width="960" alt="image" src="https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/2f366ed5-fae2-4056-8836-3c3e989f3008">
+<br></br>
 
 - Build Now in Jenkins
 ![image](https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/9a4812b9-7f49-4503-b820-031ff998895c)
+<br></br>
 
 
 
@@ -72,7 +85,6 @@ java --version
 alternatives --config java              ## Using this command you can choose any version of Java
                                         // select java 11 version
 ```
-
 
 ```bash
 cd /opt
@@ -100,7 +112,7 @@ netstat -tulpn        #(command for check port)
                       #(securitygroup-inboundrule-all traffic, anywhere)
                       #(username passwd bydefault is admin)
 ```
-
+<br></br>
 
 
 # 4. Connect to terminal and install docker :-
@@ -138,7 +150,6 @@ COPY ./*.war /usr/local/tomcat/webapps
 chmod 777 /var/run/docker.sock
 ```
 
-
 - Now Create a Jenkins job to pull the code from Github , build with help of Maven and copy the Artifacts to Dockerhost.
 - Jenkins -> Dashboard ->New project-> DevOps-Project-4-> maven project-> Source Code Management->  Post-build Actions -> select Send build artifacts over SSH -> SSH Server -> Name : give name of Added SSH Server -> Source file: webapp/target/*.war -> Remove prefix : webapp/target -> Remote directory : //opt//docker -> Exec command : enter the below commands
 ```bash
@@ -148,18 +159,34 @@ docker stop registerapp;
 docker rm registerapp;
 docker run -d --name registerapp -p 8081:8080 regapp:v1
 ```
+<br></br>
 
 ![image](https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/c8641958-0a3c-428b-8df1-67046160f153)
+<br></br>
+
 <img width="667" alt="image" src="https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/5c8e3f4b-8120-402c-8b01-0b33ca5271fc">
+<br></br>
+
 <img width="680" alt="image" src="https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/9f0b104a-5739-4179-8488-791791a65ad7">
+<br></br>
+
 ![image](https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/3c97a996-3b88-4bcb-a595-0c01dc464aef)
+<br></br>
+
 - Apply -> Save
 
 # Output :-
 
 <img width="946" alt="image" src="https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/5b40ea11-bae4-49c7-8301-f79f953813f6">
+<br></br>
+
 <img width="949" alt="image" src="https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/5abf45d1-3905-4ca9-a549-307dd96720ce">
+<br></br>
+
+# Final Output :-
 <img width="719" alt="image" src="https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/7ac056bf-3a91-4c38-b2db-51532e09ee50">
+<br></br>
+
 
 
 
