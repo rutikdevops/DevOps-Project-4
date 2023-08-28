@@ -200,7 +200,7 @@ docker run -d --name registerapp -p 8081:8080 regapp:v1
 # Project Reference :-
 - Aareez asif = https://youtu.be/361bfIvXMBI?feature=shared
 - Valaxy Tech. = https://youtu.be/nMLQgXf8tZ0?feature=shared
-
+- https://medium.com/@ahammed.jabirp/devops-project-ci-cd-2-5726966c20d2
 
 
 
