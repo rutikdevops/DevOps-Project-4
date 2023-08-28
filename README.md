@@ -192,9 +192,11 @@ docker run -d --name registerapp -p 8081:8080 regapp:v1
 
 
 - In this section, we have successfully deployed the application to the Docker server and enabled CI/CD. If any changes occur in the source code, they will be automatically built and deployed to the server.
+<br></br>
 
-
-
+# Project Reference :-
+- Aareez asif = https://youtu.be/361bfIvXMBI?feature=shared
+- Valaxy Tech. = https://youtu.be/nMLQgXf8tZ0?feature=shared
 
 
 
