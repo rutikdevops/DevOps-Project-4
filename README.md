@@ -1,5 +1,5 @@
 # DevOps-Project-4
-Deploy Website on Docker with code analysis tool SonarQube using  ec2 instance & Jenkins
+In this project, we will explore how to set up a Jenkins CI/CD pipeline using Github, Sonarqube, and Docker on an AWS EC2 instance.
 ![Docker Host (1)](https://github.com/rutikdevops/DevOps-Project-4/assets/109506158/d0b11f69-5f8c-4075-83a7-a7274a8a2fcb)
 <br></br>
 
@@ -8,7 +8,7 @@ https://medium.com/@rutikdevops/devops-project-4-31891d829c00
 <br></br>
 
 # Project Overview :-
-- In this project I created a CICD Pipeline. In which push the code in GitHub and from the github I will push the code to Jenkins and After pulling the code from GitHub I will Test the code from SonarQube which is static code analysis tool In which we can solve bugs & vulnarities also we can add the rules regarding scanning. After scanning the code If code pass I deployed code on Docker
+- In this project I will create an AWS EC2 instance and install Jenkins on it. We will then set up a Github repository and integrate it with Jenkins. Next, we will configure Sonarqube to analyze code quality in our Github repository. Finally, we will create a Docker image of our application and deploy it using Jenkins.
 <br></br>
 
 # Project Steps :-
